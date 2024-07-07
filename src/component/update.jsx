@@ -23,6 +23,7 @@ export function UpdateIncident() {
   const { incidentId } = useParams();
   const token = localStorage.getItem("token");
   const [isEditable, setIsEditable] = useState(true);
+  const [incident, setIncident] = useState({});
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -60,7 +61,6 @@ export function UpdateIncident() {
             priority,
             status,
           });
-          setIsEditable(status !== "CLOSED");
         })
         .catch((error) => {
           console.log(error);
@@ -69,10 +69,55 @@ export function UpdateIncident() {
     }
   }, [incidentId, token]);
 
+  useEffect(() => {
+    const fetchIncident = async () => {
+      if (token) {
+        try {
+          const response = await axios({
+            method: "get",
+            url: `http://localhost:8080/api/incident/${incidentId}`,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          const incidentData = response.data;
+          setIncident(incidentData);
+          console.log("details", JSON.stringify(incidentData.status));
+          setIsEditable(incidentData.status !== "CLOSED");
+        } catch (error) {
+          console.log(error);
+          alert("Failed to fetch incident details: " + error);
+        }
+      }
+    };
+    fetchIncident();
+  }, [incidentId, token]);
+  //   useEffect(() => {
+  //     if (token) {
+  //       axios({
+  //         method: "get",
+  //         url: `http://localhost:8080/api/incident/${incidentId}`,
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       })
+  //         .then((response) => {
+  //           const incidentData = response.data;
+  //           setIncident(incidentData);
+  //           console.log("details", JSON.stringify(incident.status));
+  //           setIsEditable(incident.status !== "CLOSED");
+  //         })
+  //         .catch((error) => {
+  //           console.log(error);
+  //           alert("Failed to fetch incident details: " + error);
+  //         });
+  //     }
+  //   }, [incidentId, token]);
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (update.status === "CLOSED") {
+    if (incident.status === "CLOSED") {
       alert("Cannot update a closed incident.");
       return;
     }
@@ -82,8 +127,8 @@ export function UpdateIncident() {
       return;
     }
 
-    console.log("Token:", token);
-    console.log("Updating Incident with:", update);
+    // console.log("Token:", token);
+    // console.log("Updating Incident with:", update);
 
     axios({
       method: "put",
@@ -122,7 +167,7 @@ export function UpdateIncident() {
           <div className="card p-3 shadow rounded-4 bg-body-secondary">
             <h3 className="text-center fw-bold">Update Incident Details</h3>
             <hr />
-            {update.status === "CLOSED" && (
+            {incident.status === "CLOSED" && (
               <div className="alert alert-danger text-center">
                 This incident is closed and cannot be edited.
               </div>

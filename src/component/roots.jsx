@@ -6,23 +6,24 @@ import { UserComponent } from "./user";
 import { AddIncident } from "./addIncident";
 import { DeleteComponent } from "./delete";
 import { UpdateIncident } from "./update";
+import ForgetPassword from "./forgetPassword";
 
-
-export function MainComponent(){
-    return(
-        <div className="container-fluid">
-
-            <Routes>
-                <Route path="/" element={<HomeComponent />} />
-                <Route path="/login" element={<LoginComponent />} />
-                <Route path="/register" element={<RegisterComponent />} />
-                <Route path="/user" element={<UserComponent />}></Route>
-                <Route path="/addIncident" element={<AddIncident />}></Route>
-                <Route path="/delete/:idDelete" element={<DeleteComponent />}></Route>
-                <Route path="/update/incident/:incidentId/:incidentDetails/:reportedDateTime/:priority/:status" element={<UpdateIncident />} />
-
-            </Routes>
-               
-        </div>
-    )
+export function MainComponent() {
+  return (
+    <div className="container-fluid">
+      <Routes>
+        <Route path="/" element={<HomeComponent />} />
+        <Route path="/login" element={<LoginComponent />} />
+        <Route path="/register" element={<RegisterComponent />} />
+        <Route path="/user" element={<UserComponent />}></Route>
+        <Route path="/addIncident" element={<AddIncident />}></Route>
+        <Route path="/delete/:idDelete" element={<DeleteComponent />}></Route>
+        <Route
+          path="/update/incident/:incidentId/:incidentDetails/:reportedDateTime/:priority/:status"
+          element={<UpdateIncident />}
+        />
+        <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
+      </Routes>
+    </div>
+  );
 }
