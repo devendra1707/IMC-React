@@ -1,0 +1,208 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.backgroundColor {
+    background-color:rgba(24, 65, 112, 0.733);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.card-body {
+    margin: 1px;
+}
+
+#loginButton {
+    width: 45%;
+    margin: 5px;
+    margin-left: 30px;
+}
+
+#registerButton {
+    width: 45%;
+    margin: 5px;
+}
+
+/* Login CSS Here Only*/
+
+#loginCSS{
+    background-color:  rgba(4, 54, 54, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#loginCard{
+    background-color: #36131305;
+}
+#password{
+    background-color: #36131305;
+}
+#userName{
+    background-color: #36131305;
+}
+
+#headingImg{
+    font-size: 60px;
+    background-image: url('../image/india.jpg');
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Reister CSS Here*/
+
+#registerCSS{
+    background-color: #516962;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#headingImg{
+    font-size: 50px;
+    background-image: url('../image/india.jpg');
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#registerCard{
+    background-color: #36131305;
+}
+
+#password{
+    background-color: #36131305;
+}
+#userName{
+    background-color: #36131305;
+}
+
+#email{
+    background-color: #36131305;
+}
+#date{
+    background-color: #36131305;
+}
+#dob{
+    background-color: #36131305;
+}
+#city{
+    background-color: #36131305;
+}
+#pinCode{
+    background-color: #36131305;
+}
+#country{
+    background-color: #36131305;
+}
+
+
+#contactNumber{
+    background-color: #36131305;
+}
+
+/* Admin Pannel css */
+
+#tablsCSS{
+    margin-top: 80px; 
+}
+#adminCSS{
+    font-size: 40px;
+    background-image: url('../image/bck.jpg');
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Doctor Register Page CSS coding */
+#addDoctor{
+    background-color: rgba(38, 124, 36, 0.507);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#doctorRegister{
+    background-color: rgba(38, 124, 36, 0.507);
+}
+#registerHeading{
+    font-size: 50px;
+    background-image: url('../image/bck.jpg');
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#doctorName{
+    background-color: #36131305;
+}
+#doctorEmail{
+    background-color: #36131305;
+}
+#doctorFee{
+    background-color: #36131305;
+}
+#doctorEducation{
+    background-color: #36131305;
+}
+#doctorSpecialization{
+    background-color: #36131305;
+}
+#contactNumber{
+    background-color: #36131305;
+}
+#shiftTime{
+    background-color: #36131305;
+}
+#doctorAvailable{
+    background-color: #36131305;
+}
+#doctorRating{
+    background-color: #36131305;
+}
+
+/* Appoiment Details CSS */
+
+ #appointmentHeading{
+    font-size: 30px;
+    background-image: url('../image/bck.jpg');
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+
+#appoiment{
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Update Doctor Details Here  */
+#updateDoctor{
+    background-color: #63af92c2;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
