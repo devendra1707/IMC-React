@@ -22,6 +22,7 @@ export function UpdateIncident() {
   const navigate = useNavigate();
   const { incidentId } = useParams();
   const token = localStorage.getItem("token");
+  const [isEditable, setIsEditable] = useState(true);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -59,6 +60,7 @@ export function UpdateIncident() {
             priority,
             status,
           });
+          setIsEditable(status !== "CLOSED");
         })
         .catch((error) => {
           console.log(error);
@@ -69,6 +71,11 @@ export function UpdateIncident() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (update.status === "CLOSED") {
+      alert("Cannot update a closed incident.");
+      return;
+    }
 
     if (!token) {
       alert("No authorization token found. Please log in.");
@@ -115,6 +122,11 @@ export function UpdateIncident() {
           <div className="card p-3 shadow rounded-4 bg-body-secondary">
             <h3 className="text-center fw-bold">Update Incident Details</h3>
             <hr />
+            {update.status === "CLOSED" && (
+              <div className="alert alert-danger text-center">
+                This incident is closed and cannot be edited.
+              </div>
+            )}
             <form onSubmit={handleSubmit}>
               <div className="mt-3">
                 <label htmlFor="incidentId">Incident ID</label>
@@ -138,6 +150,7 @@ export function UpdateIncident() {
                       value="individual"
                       checked={update.incidentDetails === "individual"}
                       onChange={handleChange}
+                      disabled={!isEditable}
                     />
                     <label className="form-check-label" htmlFor="individual">
                       Individual
@@ -152,6 +165,7 @@ export function UpdateIncident() {
                       value="enterprise"
                       checked={update.incidentDetails === "enterprise"}
                       onChange={handleChange}
+                      disabled={!isEditable}
                     />
                     <label className="form-check-label" htmlFor="enterprise">
                       Enterprise
@@ -166,6 +180,7 @@ export function UpdateIncident() {
                       value="government"
                       checked={update.incidentDetails === "government"}
                       onChange={handleChange}
+                      disabled={!isEditable}
                     />
                     <label className="form-check-label" htmlFor="government">
                       Government
@@ -183,23 +198,12 @@ export function UpdateIncident() {
                   className="form-control"
                   value={update.reportedDateTime}
                   onChange={handleChange}
+                  disabled={!isEditable}
                 />
                 {error.reportedDateTime && (
                   <div className="text-danger">{error.reportedDateTime}</div>
                 )}
 
-                {/* <label htmlFor="priority">Priority</label>
-                <input
-                  type="text"
-                  id="priority"
-                  name="priority"
-                  className="form-control"
-                  value={update.priority}
-                  onChange={handleChange}
-                />
-                {error.priority && (
-                  <div className="text-danger">{error.priority}</div>
-                )} */}
                 <label htmlFor="priority">Priority</label>
                 <div className="form-group me-2 flex-grow-1 position-relative">
                   <select
@@ -208,6 +212,7 @@ export function UpdateIncident() {
                     className="form-control"
                     value={update.priority}
                     onChange={handleChange}
+                    disabled={!isEditable}
                   >
                     <option value="">Select Priority</option>
                     {IncidentConstants.PRIORITIES.map((priority, index) => (
@@ -228,6 +233,7 @@ export function UpdateIncident() {
                     className="form-control"
                     value={update.status}
                     onChange={handleChange}
+                    disabled={!isEditable}
                   >
                     <option value="">Select Status</option>
                     {IncidentConstants.STATUSES.map((status, index) => (
@@ -240,19 +246,6 @@ export function UpdateIncident() {
                     <div className="text-danger">{error.status}</div>
                   )}
                 </div>
-
-                {/* <label htmlFor="status">Status</label>
-                <input
-                  type="text"
-                  id="status"
-                  name="status"
-                  className="form-control"
-                  value={update.status}
-                  onChange={handleChange}
-                />
-                {error.status && (
-                  <div className="text-danger">{error.status}</div>
-                )} */}
               </div>
 
               <button
