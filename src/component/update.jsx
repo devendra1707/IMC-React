@@ -92,27 +92,6 @@ export function UpdateIncident() {
     };
     fetchIncident();
   }, [incidentId, token]);
-  //   useEffect(() => {
-  //     if (token) {
-  //       axios({
-  //         method: "get",
-  //         url: `http://localhost:8080/api/incident/${incidentId}`,
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       })
-  //         .then((response) => {
-  //           const incidentData = response.data;
-  //           setIncident(incidentData);
-  //           console.log("details", JSON.stringify(incident.status));
-  //           setIsEditable(incident.status !== "CLOSED");
-  //         })
-  //         .catch((error) => {
-  //           console.log(error);
-  //           alert("Failed to fetch incident details: " + error);
-  //         });
-  //     }
-  //   }, [incidentId, token]);
 
   function handleSubmit(e) {
     e.preventDefault();
