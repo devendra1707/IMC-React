@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ForgetPassword = () => {
   const [forget, setForget] = useState({
@@ -59,12 +60,13 @@ const ForgetPassword = () => {
     })
       .then((response) => {
         console.log("Password updated successfully:", response.data);
-        alert("Password updated successfully");
+        Swal.fire("Password updated successfully");
+
         navigate("/login");
       })
       .catch((error) => {
         console.error("Error updating password:", error);
-        alert("Failed to update password: " + error.message);
+        Swal.error("Something went wrong");
       });
   };
 
@@ -82,7 +84,7 @@ const ForgetPassword = () => {
               </label>
               <input
                 type="text"
-                id="email"
+                id="password"
                 className="form-control mt-1"
                 onChange={handleChange}
                 name="email"
@@ -114,7 +116,7 @@ const ForgetPassword = () => {
               </label>
               <input
                 type="password"
-                id="confirmPassword"
+                id="password"
                 name="confirmPassword"
                 className="form-control"
                 placeholder="Enter Confirm Password"

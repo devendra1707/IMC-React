@@ -72,7 +72,7 @@ export function AddIncident() {
   });
 
   return (
-    <div className="container-fluid" id="addDoctor">
+    <div className="container-fluid" id="addINcident">
       <div className="row d-flex justify-content-center align-items-center vh-100">
         <div className="col-sm-6">
           <div className="card  p-4 shadow" id="doctorRegister">
