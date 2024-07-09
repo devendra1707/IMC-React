@@ -28,6 +28,32 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+# Project Title
+
+Description of your project.
+
+## Screenshots
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/2fb791af-9700-4253-9457-174a694512d0" alt="Screenshot 2024-07-08 215546" style="max-width: 100%; height: auto;">
+  
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/134b803e-af0f-4fe2-862a-b46a6b9c621c" alt="Screenshot 2024-07-08 215612" style="max-width: 100%; height: auto;">
+  
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/fb54955b-fd67-43c0-a108-63ec4cab9e48" alt="Screenshot 2024-07-08 215634" style="max-width: 100%; height: auto;">
+  
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/879e2d99-cd90-44ee-8269-3f090b6fe023" alt="Screenshot 2024-07-08 215657" style="max-width: 100%; height: auto;">
+  
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/2f1e0dc7-f432-4712-af9e-d7529e86cb90" alt="Screenshot 2024-07-08 215908" style="max-width: 100%; height: auto;">
+  
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/465dc4d5-c5d1-4899-babd-4b17b1efab98" alt="Screenshot 2024-07-08 220041" style="max-width: 100%; height: auto;">
+  
+  <img src="https://github.com/devendra1707/IMC-React/assets/92505396/d76470c7-04f8-47ae-97df-8766d9c7c74b" alt="Screenshot 2024-07-08 220105" style="max-width: 100%; height: auto;">
+
+</div>
+
+
 ![Screenshot 2024-07-08 215546](https://github.com/devendra1707/IMC-React/assets/92505396/2fb791af-9700-4253-9457-174a694512d0)
 ![Screenshot 2024-07-08 215612](https://github.com/devendra1707/IMC-React/assets/92505396/134b803e-af0f-4fe2-862a-b46a6b9c621c)
 ![Screenshot 2024-07-08 215634](https://github.com/devendra1707/IMC-React/assets/92505396/fb54955b-fd67-43c0-a108-63ec4cab9e48)
